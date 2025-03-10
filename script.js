@@ -92,3 +92,18 @@ pinInput.addEventListener('input', (e) => {
 document.getElementById('check').addEventListener('click', test);
 
 main();
+
+async function crackHash(targetHash) {
+  // targetHash="dcb5d6e69e4ded78464ae2843f509daf65c9ca09dfdc9b5ad69166341963a877" 
+    console.log(targetHash)
+    for (let i = 100; i <= 999; i++) {
+        const guessHash = await sha256(i.toString()); 
+        if (guessHash === targetHash) {
+              console.log("Answer =>", i)
+        }
+      }
+    }
+  
+
+
+
